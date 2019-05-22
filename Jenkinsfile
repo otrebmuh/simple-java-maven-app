@@ -16,13 +16,12 @@ pipeline {
             }
         }        
         stage('Sonarqube analysis') {
+            environment {
+                SONAR_SCANNER_OPTS = "-Xmx2g"
+            } 
             steps {
-                script {
-                    scannerHome = tool 'SonarQubeScanner';
-                }
-                withSonarQubeEnv('SonarQube') {
-                        sh "${scannerHome}/bin/sonar-scanner"
-                }
+                sh "pwd"
+                sh "/var/jenkins_home/sonar-scanner/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
             }
         }
     }
