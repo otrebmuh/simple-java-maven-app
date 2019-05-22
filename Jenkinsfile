@@ -17,7 +17,7 @@ pipeline {
         }        
         stage('Sonarqube analysis') {
             environment {
-                SONAR_SCANNER_OPTS = "-Xmx2g"
+                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=Test"
             } 
             steps {
                 withSonarQubeEnv('SonarQube') {
