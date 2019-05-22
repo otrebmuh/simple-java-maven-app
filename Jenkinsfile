@@ -20,7 +20,7 @@ pipeline {
                 SONAR_SCANNER_OPTS = "-Xmx2g"
             } 
             steps {
-                sh "pwd"
+                sh "export JAVA_HOME=/usr"
                 sh "/var/jenkins_home/sonar-scanner/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
             }
         }
