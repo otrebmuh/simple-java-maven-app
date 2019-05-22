@@ -6,7 +6,6 @@ pipeline {
     }
     stages {
         stage('Build') {
-            {
             docker {
                 image 'maven:3-alpine'
                 args '-v /root/.m2:/root/.m2'
@@ -16,7 +15,6 @@ pipeline {
             }
         }
         stage('Test') {
-            {
             docker {
                 image 'maven:3-alpine'
                 args '-v /root/.m2:/root/.m2'
@@ -31,7 +29,6 @@ pipeline {
             }
         }
         stage('Deliver') { 
-            {
             docker {
                 image 'maven:3-alpine'
                 args '-v /root/.m2:/root/.m2'
