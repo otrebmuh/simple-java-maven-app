@@ -15,15 +15,13 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }        
-        node {
-            stage('Sonarqube') {
-                 environment {
-                    scannerHome = tool 'SonarQubeScanner'
+        stage('Sonarqube analysis') {
+            steps {
+                script {
+                    scannerHome = tool 'SonarQubeScanner';
                 }
-                steps {
-                    withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('SonarQube') {
                         sh "${scannerHome}/bin/sonar-scanner"
-                    }
                 }
             }
         }
