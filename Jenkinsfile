@@ -17,7 +17,7 @@ pipeline {
         }        
         stage('Sonarqube analysis') {
             environment {
-                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=Test -Dsonar.login=202b6aef450f839353fc0f087248c4a8a566c9e1 -Dsonar.java.binaries=/var/jenkins_home/workspace/Simple Java Maven/my-app-1.0-SNAPSHOT.jar"
+                SONAR_SCANNER_OPTS = "-Xmx2g -Dsonar.projectKey=Test -Dsonar.login=202b6aef450f839353fc0f087248c4a8a566c9e1 -Dsonar.java.binaries=/var/jenkins_home/workspace/Simple Java Maven/target/classes"
             } 
             steps {
                 withSonarQubeEnv('SonarQube') {
