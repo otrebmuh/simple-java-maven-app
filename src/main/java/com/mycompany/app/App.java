@@ -11,11 +11,16 @@ public class App
     public App() {}
 
     public static void main(String[] args) {
-        System.out.println(new App().getMessage());
+    	App app = new App();
+    	app.start();
     }
 
     private final String getMessage() {
         return message;
     }
 
+    public void start() {
+        System.out.println(message);
+    	
+    }
 }

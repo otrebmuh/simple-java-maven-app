@@ -1,3 +1,9 @@
+/*
+
+https://medium.com/@rosaniline/setup-sonarqube-with-jenkins-declarative-pipeline-75bccdc9075f
+https://stackoverflow.com/questions/48557886/how-to-execute-sonarqube-scanner-in-jenkins-declarative-pipeline-without-maven-a
+
+*/
 pipeline {
     agent any
     options {
